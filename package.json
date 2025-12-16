@@ -1,0 +1,65 @@
+{
+  "name": "app-veterinaria",
+  "version": "1.0.2",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.drrivera.app",
+    "win": {
+      "target": "nsis",
+      "icon": "logo.jpg",
+      "verifyUpdateCodeSignature": false,
+      "forceCodeSigning": false
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "AxeliniDan",
+        "repo": "Repo"
+      }
+    ],
+    "files": [
+      "main.js",
+      "server.js",
+      "renderer.js",
+      "api.js",
+      "preload.js",
+      "database.js",
+      "database.sqlite",
+      "uploads/**/*",
+      "breeds.js",
+      "index.html",
+      "manifest.json",
+      "app_icon_512.png",
+      "logo.jpg",
+      "package.json",
+      "node_modules/**/*"
+    ],
+    "asar": true
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@electron/rebuild": "^4.0.2",
+    "electron": "^39.2.6",
+    "electron-builder": "^26.0.12"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "electron-log": "^5.4.3",
+    "electron-updater": "^6.6.2",
+    "express": "^5.2.1",
+    "ip": "^2.0.1",
+    "jimp": "^1.6.0",
+    "multer": "^2.0.2",
+    "sqlite3": "^5.1.7",
+    "xlsx": "^0.18.5"
+  }
+}
